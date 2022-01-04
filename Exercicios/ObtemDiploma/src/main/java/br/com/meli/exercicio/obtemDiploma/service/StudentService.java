@@ -36,6 +36,9 @@ public class StudentService {
      * @return double
      */
     private double calculaMedia(StudentDTO stdDto){
+        if(stdDto.getStudent().getSubjects().size() == 0)
+            return 0;
+
         double media = 0;
         for(Subject s : stdDto.getStudent().getSubjects()){
             media += s.getNote();
